@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiple Choice Quiz App</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+  <div class="score-board">
+    Score: <span id="score">0</span>
+  </div>
+  <div class="card">
+    <h2 id="question">Question comes here</h2>
+    <div id="choices" class="choice-container">
+      <!-- Multiple choice options will be rendered here -->
+    </div>
+    <div class="buttons">
+      <button onclick="prevCard()">Previous</button>
+      <button onclick="nextCard()">Next</button>
+    </div>
+  </div>
+
+  <!-- Add/Edit Flashcard section -->
+  <div class="add-card">
+    <h3>Add / Edit Flashcard</h3>
+    <input type="text" id="newQuestion" placeholder="Question" />
+    <!-- Enter choices as a comma separated list -->
+    <input type="text" id="newChoices" placeholder="Choices (comma separated)" />
+    <!-- The correct answer must exactly match one of the choices -->
+    <input type="text" id="newCorrect" placeholder="Correct Answer" />
+    <button onclick="addOrEditCard()" id="saveBtn">Add Card</button>
+    <button onclick="cancelEdit()" id="cancelBtn" style="display:none">Cancel</button>
+  </div>
+
+  <div class="card-list">
+    <h3>All Flashcards</h3>
+    <div id="cardList"></div>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html>
